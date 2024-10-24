@@ -19,13 +19,11 @@
  */
 package org.kse.gui.jar;
 
-import java.awt.Component;
+import java.awt.*;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
-import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.border.EmptyBorder;
+import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
@@ -52,16 +50,17 @@ public class JarInfoTableCellRend extends DefaultTableCellRenderer {
         JLabel cell = (JLabel) super.getTableCellRendererComponent(jtJarInfo, value, isSelected, hasFocus, row, col);
         if (cell.getText().isEmpty()) {
             cell.setText("-");
-            cell.setHorizontalAlignment(CENTER);
-        } else {
-            cell.setHorizontalAlignment(LEFT);
-        }
-
+            }
+        cell.setHorizontalAlignment(CENTER);
         if (col == 1) {
             cell.setText(MessageFormat.format(res.getString("JarInfoTableCellRend.Size.text"), value));
         }
 
-        cell.setBorder(new EmptyBorder(0, 5, 0, 5));
+        if (col < jtJarInfo.getColumnCount() - 1 ) {
+            cell.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.LIGHT_GRAY));
+        } else {
+            cell.setBorder(null);
+        }
 
         return cell;
     }
