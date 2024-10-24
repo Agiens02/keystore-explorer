@@ -325,7 +325,7 @@ tasks.register('innosetup') {
 		}
 		exec {
 			workingDir "$projectDir/innosetup"
-			commandLine "ISCC.exe", "setup.iss"
+			commandLine "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe", "setup.iss"
 		}
 	}
 }

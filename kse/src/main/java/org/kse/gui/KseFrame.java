@@ -716,7 +716,7 @@ public final class KseFrame implements StatusBar {
 
         jmiSaveAs = new JMenuItem(saveAsAction);
         PlatformUtil.setMnemonic(jmiSaveAs, res.getString("KseFrame.jmiSaveAs.mnemonic").charAt(0));
-        jmiSaveAs.setDisplayedMnemonicIndex(5);
+//        jmiSaveAs.setDisplayedMnemonicIndex(5);
         jmiSaveAs.setToolTipText(null);
         new StatusBarChangeHandler(jmiSaveAs, (String) saveAsAction.getValue(Action.LONG_DESCRIPTION), this);
         jmFile.add(jmiSaveAs);
